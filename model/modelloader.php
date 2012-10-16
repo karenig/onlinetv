@@ -1,6 +1,6 @@
 <?php
-require_once ROOT_DIRECTORY.'/administer/includes/model/Db.php';
-require_once ROOT_DIRECTORY.'/administer/includes/model/Iguan_Cache.php';
+require_once ROOT_DIRECTORY.'/admin/includes/model/Db.php';
+require_once ROOT_DIRECTORY.'/admin/includes/model/Iguan_Cache.php';
 
 //require_once ROOT_DIRECTORY.'/model/Memcache_Api.php';
 require_once ROOT_DIRECTORY.'/model/Request.php';

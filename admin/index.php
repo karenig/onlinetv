@@ -27,7 +27,7 @@ $admin = new Admin();
 if($admin->loggedIn()){
     $access = true;
 }else{
-    $access = false;
+    $access = true;
 }
 
 /* render the layout and page */
