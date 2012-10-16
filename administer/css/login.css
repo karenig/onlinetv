@@ -1,0 +1,42 @@
+body { background-image: url(../images/bg.png); font: 12px/1.7em arial, sans-serif; margin: 75px; }
+
+#login { width: 325px; position: absolute; left: 50%; margin-left: -200px; margin-top: 30px; }
+
+#login h1
+{
+
+	width: 240px;
+	height: 32px;
+	line-height: 800px;
+	overflow: hidden;
+	margin: 0 auto .75em;
+    	
+}
+
+#login_panel
+{    
+	background: #C7C2C2;
+	width: 325px;
+	border: 1px solid #CCC;
+	overflow: hidden;
+	
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	
+	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,.6);
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.6);
+	box-shadow: 1px 1px 1px rgba(0,0,0,.6);
+}
+
+#login_panel .login_fields { padding: 22px 15px 15px; }
+	#login_panel .login_fields input { width: 280px; }
+
+#login_panel .field { margin-bottom: 1.75em; }
+	#login_panel .field:last-child { margin-bottom: .85em; }
+	
+	#login_panel .field label { font-weight: bold; display: block; position: relative; } 	
+		#login_panel .field label small { position: absolute; right: 0; top: -2px; }
+			#login_panel .field label small a { color: #999; }
+
+#login .login_actions { background: #897B7B; width: auto; padding: 15px; border-top: 1px dotted #CCC; margin-top: 25px; }
