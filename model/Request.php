@@ -2,7 +2,7 @@
 class Request{
     private $request;
     private $page;
-    private $data;
+    private $data = array();
     
     private $folder_deepth = 1;
 
@@ -35,13 +35,22 @@ class Request{
     private function loadData(){
         $request = $this->request;
         
-        if(isset($request[0+$this->folder_deepth])){
-            // Check if head category.
-            if(key_exists($request[2], Category::$head_categories)) {
-                $this->page = $request[0+$this->folder_deepth] . '/' . Category::$head_categories[$request[2]];
-            } else {
-                $this->page = $request[0+$this->folder_deepth] . '/inner';
+        if(isset($request[1])){
+            switch($request[1]){
+                case "category":
+                    // Check if head category.
+                    if(key_exists($request[2], Category::$head_categories)) {
+                        $this->page = $request[1] . '/' . Category::$head_categories[$request[2]];
+                    } else {
+                        $this->page = $request[1] . '/inner';
+                    }
+                    break;
+                case "content":
+                    $this->data['title'] = $request[2];
+                    $this->page = $request[1] . '/inner';
+                    break;
             }
+            
         }else{
             $this->page = 'index';
         }
@@ -54,7 +63,7 @@ class Request{
         for($i=0;$i<count($request);$i+=2){
             $data[$request[$i]] = $request[$i+1];
         }
-        $this->data = $data;
+        $this->data = array_merge($this->data, $data);
     }
     
     private function loadRequestString(){
@@ -64,6 +73,7 @@ class Request{
                 $request = $k;
             }
         }
+        
         $this->request = explode('/', $request);
     }
 }

@@ -2,7 +2,7 @@
       </td>
       <td valign="top">
 	   <div id="rightsidebar" valign="top">
-	  <div class="leftsidebar"><?include ($_SERVER['DOCUMENT_ROOT'].'/views/pages/rightsidebar.php');?></div>
+	  <div class="leftsidebar">><?php require_once 'widgets/rightsidebar.php'; ?></div>
 	   </div>
       </td>
 </tr>

@@ -15,6 +15,7 @@ $request = new Request();
 
 $page = $request->getPage();
 
+
 function _e($x,$y){
     echo $x;
 }

@@ -123,7 +123,7 @@ jQuery(function(){
       <td id="leftsidebar" valign="top">
            <div class="leftsidebar">
 		<div class="leftsidebar">
-		<div class="leftsidebar"><?php require_once 'widgets/leftsidebar.php'; ?></div>
+                    <div class="leftsidebar"><?php require_once 'widgets/leftsidebar.php'; ?></div>
 		</div>
 </div>    </td>
       <td valign="top">

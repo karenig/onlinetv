@@ -11,6 +11,7 @@ $blogs = $db->fetchAll("SELECT * FROM blog");
 
 
 foreach ($blogs as $blog){
+    unset($blog['id']);
     $blog['title'] = addslashes($blog['title']);
     $blog['krchat'] = addslashes($blog['krchat']);
     $blog['body'] = addslashes($blog['body']);

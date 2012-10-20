@@ -9,7 +9,7 @@ class Content{
     
     /*settings*/
     private $num_words_in_short_desc = 20;
-    private static $perpage = 20;
+    private static $perpage = 10;
     
     private function createShortDescriptions(){
         for($i=1;$i<=3;$i++){
@@ -31,37 +31,30 @@ class Content{
         }
     }
     
-    public static function getPosts($page=1){
+    public static function getContents($page=1){
         $start = ($page-1)*(self::$perpage);
         $perpage = self::$perpage;
+        $categories_in = implode("','", Category::$lrahos);
         $db = new Db();
-        $posts = $db->fetchAll("SELECT * FROM post WHERE is_approved!=0 AND date<$time ORDER BY date DESC LIMIT $start,$perpage");
+        $posts = $db->fetchAll("SELECT * FROM nodes WHERE type IN('" . $categories_in . "') ORDER BY timestamp DESC LIMIT $start,$perpage");
         return $posts;
     }
     
-    public function loadPost($id){
+    public function loadContent($title){
         $db = new Db();
-        $this->data = $db->fetchOne("SELECT * FROM post WHERE id='$id' LIMIT 0,1");
+        $this->data = $db->fetchOne("SELECT * FROM nodes WHERE urls='".addslashes($title)."' LIMIT 0,1");
         foreach ($this->data as $k=>$v){
             $this->data[$k] = trim($this->data[$k]);
         }
-        for($i=1;$i<=3;$i++){
-            if($this->data['cat'.$i]){
-                $this->categories[] = $this->data['cat'.$i];
-            }
-            unset($this->data['cat'.$i]);
-        }
-        $this->id = $id;
-        unset($this->data['id']);
         
-        $this->details = $db->fetchOne("SELECT * FROM post_details WHERE id='$id' LIMIT 0,1");
+        $this->id = $this->data['nid'];
+        unset($this->data['nid']);
+        
+        $this->details = $db->fetchOne("SELECT * FROM node_details WHERE nid='".$this->id."' LIMIT 0,1");
         foreach ($this->details as $k=>$v){
             $this->details[$k] = trim($this->details[$k]);
         }
-		$this->details['images'] = unserialize($this->details['images']);
-		if(!is_array($this->details['images'])){
-			$this->details['images'] = array();
-		}
+
     }
 	
 	public static function loadOptions($id){
@@ -80,7 +73,7 @@ class Content{
         return $posts;
     }
 	
-    public static function getPhotosByCategory($cat_id,$count,$page=1){
+    public static function getContentsByCategory($cat_id, $count, $page=1){
         $db = new Db();
         $start = ($page-1)*($count);
         date_default_timezone_set('Asia/Baku');
@@ -119,8 +112,9 @@ class Content{
 		return $posts;
     }
     
-    public static function getLink($id,$name){
-        echo ROOT_URL.'/post/id/'.$id.'/';
+    public static function getLink($name){
+        $name = str_replace(" ", "-", $name);
+        echo ROOT_URL.'/content/'.$name.'/';
     }
     
     public static function isBlue(&$name){
