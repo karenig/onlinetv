@@ -36,7 +36,12 @@ class Request{
         $request = $this->request;
         
         if(isset($request[0+$this->folder_deepth])){
-            $this->page = $request[0+$this->folder_deepth];
+            // Check if head category.
+            if(key_exists($request[2], Category::$head_categories)) {
+                $this->page = $request[0+$this->folder_deepth] . '/' . Category::$head_categories[$request[2]];
+            } else {
+                $this->page = $request[0+$this->folder_deepth] . '/inner';
+            }
         }else{
             $this->page = 'index';
         }

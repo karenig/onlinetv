@@ -3,11 +3,6 @@ session_start();
 date_default_timezone_set("Asia/Baku");
 
 $r_u = $_SERVER['REQUEST_URI'];
-$pos = strpos($r_u, 'http://93.94.218.146');
-
-if($pos){
-	exit;
-}
 
 /* load constants and config */
 require_once 'config.php';
