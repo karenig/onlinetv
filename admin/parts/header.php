@@ -41,17 +41,11 @@
         <div class="main_content">
         	<div class="menu">
 				<ul>
-					<li><a href="<?php echo ADMIN_URL ?>" class="<?php if(Admin::is_home()) echo "current"; ?>" >Home</a></li>
-					<li><a href="<?php echo ADMIN_URL ?>?part=contents" class="<?php if($_GET["part"] == 'contents') echo "current"; ?>" >Contents</a>
+					<li><a href="<?php echo ADMIN_URL ?>" class="<?php if(Admin::is_home()) echo "current"; ?>" ><?php echo t('Home'); ?></a></li>
+					<li><a href="<?php echo ADMIN_URL ?>?part=contents" class="<?php if($_GET["part"] == 'contents') echo "current"; ?>" ><?php echo t('Contents'); ?></a>
 					   <ul>
-							<li><a href="<?php echo ADMIN_URL ?>?part=contents&view=add">Add new Content</a></li>	
-							<li><a href="<?php echo ADMIN_URL ?>?part=contents">Contents</a></li>	
-					   </ul>
-					</li>
-					<li><a href="<?php echo ADMIN_URL ?>?part=polls" class="<?php if($_GET["part"] == 'polls') echo "current"; ?>">Polls</a>
-					   <ul>
-							<li><a href="<?php echo ADMIN_URL ?>?part=polls&view=add">Add new poll</a></li>	
-							<li><a href="<?php echo ADMIN_URL ?>?part=polls">Polls</a></li>	
+							<li><a href="<?php echo ADMIN_URL ?>?part=contents&view=add"><?php echo t('Add new Content'); ?></a></li>	
+							<li><a href="<?php echo ADMIN_URL ?>?part=contents"><?php echo t('Contents'); ?></a></li>	
 					   </ul>
 					</li>			
 				</ul>

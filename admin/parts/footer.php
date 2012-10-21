@@ -1,6 +1,6 @@
 <div class="footer_login">
     
-    	<div class="left_footer_login">&copy; 2010-11 Copyright <a href="http://iguansystems.com">Iguan Systems</a>. Powered by PHP :)</div>
+    	<div class="left_footer_login">&copy; 2012 Copyright. Powered by Karen and Levon :)</div>
 <!--    	<div class="right_footer_login"><a href="http://indeziner.com"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>-->
     
     </div>

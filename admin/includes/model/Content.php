@@ -140,56 +140,46 @@ class Content{
         echo $date;
     } 
     
-    public static function getPosts($page=1, $search='', $cat_id='', $type = 'full') {
+    public static function getContents($page=1, $search='', $cat_id=0) {
         $db = new Db();
         $start = ($page-1)*(self::$perpage);
         $perpage = self::$perpage;
-        $posts_count = self::getPostsCount($search, $cat_id, $type);
-		$pagination_url = ADMIN_URL.'?part=posts';
+        $contents_count = self::getContentsCount($search, $cat_id);
+		$pagination_url = ADMIN_URL.'?part=contents';
 		
 		$where = array('1=1');
 		
         if($search != '') {
-            $where[] = '(name1 LIKE "%'.$search.'%" OR short1 LIKE "%'.$search.'%")';
+            $where[] = 'title LIKE "%'.$search.'%"';
 			$pagination_url .= "&search=".$search;
         } 
-        if($cat_id != '') {
-            $where[] = "(cat1='$cat_id' OR cat2='$cat_id' OR cat3='$cat_id')";
+        if($cat_id) {
+            $where[] = "(type='$cat_id')";
 			$pagination_url .= "&category=".$cat_id;
         } 
-        if($type == 'draft') {
-            $where[] = "is_draft=1";
-			$pagination_url .= "&type=".$type;
-        } else {
-            $where[] = "is_draft=0";
-        }  
-		
-		$pagination = new Pagination($page, $perpage, $posts_count, $pagination_url);
+      
+		$pagination = new Pagination($page, $perpage, $contents_count, $pagination_url);
         $pager = $pagination->getPagesLinksString();
         $where = implode(' AND ',$where );
-        $posts = $db->fetchAll("SELECT * FROM post WHERE $where ORDER BY date DESC LIMIT $start,$perpage");
-        $posts['pager'] = $pager;
-        return $posts;
+        $contents = $db->fetchAll("SELECT * FROM nodes WHERE $where ORDER BY timestamp DESC LIMIT $start,$perpage");
+        $contents['pager'] = $pager;
+        return $contents;
     }  
     
-    public static function getPostsCount($search = '', $cat_id = '', $type = 'full') {
+    public static function getContentsCount($search = '', $cat_id = '') {
         $db = new Db();
         $where = array('1=1');
 		
         if($search != '') {
-            $where[] = '(name1 LIKE "%'.$search.'%" OR short1 LIKE "%'.$search.'%")';
+            $where[] = 'title LIKE "%'.$search.'%"';
         } 
         if($cat_id != '') {
-            $where[] = "(cat1='$cat_id' OR cat2='$cat_id' OR cat3='$cat_id')";
+             $where[] = "(type='$cat_id')";
         }
-        if($type == 'draft') {
-            $where[] = "is_draft=1";
-        } else {
-            $where[] = "is_draft=0";
-        } 
-	$where = implode(' AND ',$where );
-        $posts_count = $db->fetchOne("SELECT COUNT(*) as ct FROM post WHERE $where");
-        return $posts_count['ct'];
+      
+		$where = implode(' AND ',$where );
+        $contents_count = $db->fetchOne("SELECT COUNT(*) as ct FROM nodes WHERE $where");
+        return $contents_count['ct'];
     }
 	
 	public static function getPostsByCategories($cat_ids,$count,$page = 1){
