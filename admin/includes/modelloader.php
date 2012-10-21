@@ -3,12 +3,13 @@
 /*
  * without autoloading
  */
+ 
 require_once 'model/Db.php';
 require_once 'model/Submit_Checker.php';
+require_once 'model/Translation.php';
 require_once 'model/Admin.php';
-require_once 'model/Post.php';
+require_once 'model/Content.php';
 require_once 'model/Category.php';
 require_once 'model/Pagination.php';
 require_once 'model/Iguan_Cache.php';
-require_once 'model/Poll.php';
 ?>

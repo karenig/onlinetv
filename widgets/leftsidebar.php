@@ -10,7 +10,7 @@ foreach ($news_last as $items):
     <div class="blck"> 
      <table>
      <tr>
-        <td  valign="top" width="51"><img src="http://online-tv.am/<?php echo $items['filepath']?>" width="50" alt="title"/></td>
+        <td  valign="top" width="51"><img src="http://test.online-film.am/<?php echo $items['filepath']?>" width="50" alt="title"/></td>
         <td valign="top">
             <span class="datetime"><?=$dates->format('H:i')?> - </span>
             <span ><a class="first_block" href="<?php Content::getLink($items['urls']); ?>"><?=$items['title'];?></a></span>

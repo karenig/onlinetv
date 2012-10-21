@@ -370,3 +370,7 @@ background-position: center center;
     left: 960px;
     top: -90px;
 }
+
+.left { float:left; }
+.right { float:right; }
+.extra { overflow:hidden; width:250x; }

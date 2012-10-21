@@ -30,33 +30,35 @@ jQuery(function(){
 </head>
 
 <body>
-
        <div id="container">
  <div class="baner1"></div>
 
 <!--  Header section -->
+<div id="header">
+	<div class="left"><a href="<?php echo ROOT_URL; ?>"><div class="logo"></div></a></div>
+	<div class="right">
+		<div class="extra">
+			<div class="left" style="margin-top:41px;">
+				<a href="#" target="_self" style="margin-right:17px;"><img src="<?php echo ROOT_URL; ?>/images/TV.png" width="25" /></a>
+				<a href="#" target="_self" style="margin-right:17px;"><img  src="<?php echo ROOT_URL; ?>/images/RADIO.png" width="25" /></a>
+			</div>
+	  
+			<div class="left" style="margin:13px 5px 0px 0px;"><object style="height: 75px; width:75px;margin-right:10px;align:left">
+				<param name="movie" value="<?php echo ROOT_URL; ?>/images/clock_.swf" />
+				<param name="wmode" value="transparent" />
+				<param name="allowFullScreen" value="true" />
+				<param name="allowScriptAccess" value="always" />
+				<embed allowfullscreen="true" allowscriptaccess="always" height="75" src="<?php echo ROOT_URL; ?>/images/clock_.swf" type="application/x-shockwave-flash" width="75" wmode="transparent"></embed>
+			</object></div>
 
-	 <div id="header">
-    		  <div class="logo"></div>
-    		  <div class="extra1"><div style="position:relative;top:30px; left:15px;"><a href="http://online-tv.am/առցանցtv" target="_self"><img src="/images/TV.png" width="25"  /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://online-tv.am/%D5%BC%D5%A1%D5%A4%D5%AB%D5%B8" target="_self"><img  src="/images/RADIO.png" width="25" /> </a>
-</div></div>
-    		  
-    		  
-    		  <div class="extra2">
-    		  <table>
-<tr>
-<td><object style="height: 75px; width:75px;margin-right:10px;align:left"><param name="movie" value="/images/clock_.swf" /><param name="wmode" value="transparent" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><embed allowfullscreen="true" allowscriptaccess="always" height="75" src="/images/clock_.swf" type="application/x-shockwave-flash" width="75" wmode="transparent"></embed></object></td>
-<td>&nbsp;&nbsp;&nbsp;
-<a href="http://online-tv.am/rss"><img src="/images/rss.png" width="25" /></a><br/><img src="/images/24jam.png" width="40" /></td>
-<tr/>
-</table>
-
-
-
-
+			<div class="left" style="margin-top:13px; margin-right:10px;">
+				<a href="http://online-tv.am/rss" class="right"><img src="<?php echo ROOT_URL; ?>/images/rss.png" width="25" /></a><br/>
+				<img src="<?php echo ROOT_URL; ?>/images/24jam.png" width="40" />
+			</div>
+		</div>
+	</div>
 </div>
- 	 </div>
-
+<!--<div class="extra2"></div>-->
 <!--  END Header  -->
 
 <!--  MENU section -->

@@ -1,0 +1,1 @@
+<?phpfunction t($text) {		$translation = array(		'Welcome Admin' => 'Բարի գալուստ Admin',		'Logout' => 'Դուրս գալ'			);		return (key_exists($text, $translation))?$translation[$text]:'';};?>

@@ -36,32 +36,25 @@
 	<div id="main_container">
 		<div class="header">
     		<div class="logo"><a href="#"><img src="images/logo.png" alt="" title="" border="0" style="margin-top:-25px;"/></a></div>
-    		<div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="<?php echo ADMIN_URL ?>/?part=home&view=logout" class="logout">Logout</a></div>
+    		<div class="right_header"><?php echo t('Welcome Admin'); ?>, <a href="http://online-tv.am" target="_blank">online-tv.am</a> | <a href="<?php echo ADMIN_URL ?>/?part=home&view=logout" class="logout"><?php echo t('Logout'); ?></a></div>
     	</div>
         <div class="main_content">
         	<div class="menu">
-                    <ul>
-                        <li><a href="<?php echo ADMIN_URL ?>" class="<?php if(Admin::is_home()) echo "current"; ?>" >Home</a></li>
-                        <li><a href="<?php echo ADMIN_URL ?>?part=posts" class="<?php if($_GET["part"] == 'posts') echo "current"; ?>" >Posts</a>
-                           <ul>
-                                <li><a href="<?php echo ADMIN_URL ?>?part=posts&view=add">Add new post</a></li>	
-                                <li><a href="<?php echo ADMIN_URL ?>?part=posts">Posts</a></li>	
-                           </ul>
-                        </li>
-                    	<li><a href="<?php echo ADMIN_URL ?>?part=polls" class="<?php if($_GET["part"] == 'polls') echo "current"; ?>">Polls</a>
-                           <ul>
-                                <li><a href="<?php echo ADMIN_URL ?>?part=polls&view=add">Add new poll</a></li>	
-                                <li><a href="<?php echo ADMIN_URL ?>?part=polls">Polls</a></li>	
-                           </ul>
-			</li>			
-                                                
-<!--                        <li><a href="<?php //echo ADMIN_URL ?>">Moderation</a></li>-->
-<!--                        <li><a href="<?php //echo ADMIN_URL ?>">Users</a></li>-->
-                    </ul>
-             </div>
-             
-            
-            
-            
+				<ul>
+					<li><a href="<?php echo ADMIN_URL ?>" class="<?php if(Admin::is_home()) echo "current"; ?>" >Home</a></li>
+					<li><a href="<?php echo ADMIN_URL ?>?part=contents" class="<?php if($_GET["part"] == 'contents') echo "current"; ?>" >Contents</a>
+					   <ul>
+							<li><a href="<?php echo ADMIN_URL ?>?part=contents&view=add">Add new Content</a></li>	
+							<li><a href="<?php echo ADMIN_URL ?>?part=contents">Contents</a></li>	
+					   </ul>
+					</li>
+					<li><a href="<?php echo ADMIN_URL ?>?part=polls" class="<?php if($_GET["part"] == 'polls') echo "current"; ?>">Polls</a>
+					   <ul>
+							<li><a href="<?php echo ADMIN_URL ?>?part=polls&view=add">Add new poll</a></li>	
+							<li><a href="<?php echo ADMIN_URL ?>?part=polls">Polls</a></li>	
+					   </ul>
+					</li>			
+				</ul>
+             </div>                                
 
             

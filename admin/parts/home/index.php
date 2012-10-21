@@ -179,5 +179,5 @@ require_once 'parts/header.php';
 
 </div> <!-- #content -->
 		
-<p class="footer_p">&copy; 2010-11 Copyright <a href="http://iguansystems.com">Iguan Systems</a>. Powered by PHP :)</p>
+<p class="footer_p">&copy; 2012 Copyright <a href="http://iguansystems.com">Iguan Systems</a>. Powered by PHP :)</p>
     

@@ -24,7 +24,7 @@ class Admin{
     public function login($login,$pass){
         $db = new Db();
         $pass = md5($pass);
-        $admin = $db->fetchOne("SELECT * FROM admin WHERE login='$login' AND pass='$pass'");
+        $admin = $db->fetchOne("SELECT * FROM users WHERE name='$login' AND pass='$pass'");
         if(is_array($admin)){
             $_SESSION['admin'] = $admin;
             return true;

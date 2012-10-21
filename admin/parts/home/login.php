@@ -47,12 +47,12 @@ if(isset($_POST['ok'])){
                                 <?php } ?></dd>
                     </dl>
                     <dl>
-                        <dt><label for="email">Username:</label></dt>
-                        <dd><input type="text" name="login" id="" size="54" <?php if(isset($login)){ ?>value="<?php echo $login ?>"<?php } ?> /></dd>
+                        <dd><label for="email">Username:</label></dt>
+                        <dd><input type="text" name="login" id="" size="50" <?php if(isset($login)){ ?>value="<?php echo $login ?>"<?php } ?> /></dd>
                     </dl>
                     <dl>
-                        <dt><label for="password">Password:</label></dt>
-                        <dd><input type="password" name="password" id="" size="54" /></dd>
+                        <dd><label for="password">Password:</label></dt>
+                        <dd><input type="password" name="password" id="" size="50" /></dd>
                     </dl>
                     
                      <dl class="submit">
@@ -68,7 +68,7 @@ if(isset($_POST['ok'])){
     
     <div class="footer_login">
     
-    	<div class="left_footer_login">&copy; 2010-11 Copyright <a href="http://iguansystems.com">Iguan Systems</a>. Powered by PHP :)</div>
+    	<div class="left_footer_login">&copy; 2010-11 Copyright</div>
     
     </div>
 
